@@ -1,16 +1,12 @@
-# Getting Started with Create React App
+## Привет, этот проект был загружен с помощью  Create React App!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[LIVE DEMO](https://alex-agd.github.io/React_twitter/) - Github Pages
 
-In the project directory, you can run:
+Для запуска приложения  в режиме разработки. 
 
-### `yarn start`
+ - Запустите: npm init в папке с проектом
+ - npm start для запуска
+ - Откройте http: // localhost: 3000, чтобы просмотреть его в браузере.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
+ Если вы внесете правки, страница перезагрузится. Вы также увидите любые ошибки линта в консоли.
