@@ -1,5 +1,5 @@
 import React from 'react';
-import AppHeader from "../app-header";
+import AppHeader from "../app-header/app-header";
 import SearchPanel from "../search-panel";
 
 const App = () => {
