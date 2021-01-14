@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-twitter"]=this["webpackJsonpreact-twitter"]||[]).push([[0],{10:function(t,e,n){},11:function(t,e,n){"use strict";n.r(e);var c=n(1),r=n(0),i=n.n(r),s=n(3),a=n.n(s);n(9),n(10);var o=function(){return Object(c.jsx)("div",{className:"App"})};a.a.render(Object(c.jsx)(i.a.StrictMode,{children:Object(c.jsx)(o,{})}),document.getElementById("root"))},9:function(t,e,n){}},[[11,1,2]]]);
-//# sourceMappingURL=main.ad06afb5.chunk.js.map
