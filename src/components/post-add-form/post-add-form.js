@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const PostAddForm = () => {
     return (
@@ -8,10 +9,7 @@ const PostAddForm = () => {
                        placeholder="Ваш текст"
                        className="form-control new-post-label"/>
 
-                <button type="submit"
-                        className="btn btn-outline-secondary">
-                    Добавить
-                </button>
+                <Button type="submit" color="success">Добавить </Button>{' '}
             </form>
         </div>
     )

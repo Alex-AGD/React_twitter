@@ -1,12 +1,12 @@
 import React from 'react';
 import PostListItem from "../post-list-item/post-list-item";
 import './post-list.css'
+import { ListGroup } from 'reactstrap';
 
 const PostList = ({ posts }) => {
 //{...item} ES8
 // const {id, ...itemProps} = item
     const elements = posts.map ((item) => {
-
         return (
             <li className='list-group-item' key={ item.id }>
                 <PostListItem
@@ -18,9 +18,9 @@ const PostList = ({ posts }) => {
 
     return (
         <div>
-            <ul className="app-list list-group">
+            <ListGroup className="app-list">
                 { elements }
-            </ul>
+            </ListGroup>
         </div>
     )
 }
