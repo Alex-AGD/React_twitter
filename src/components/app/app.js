@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppHeader from "../app-header/app-header";
 import SearchPanel from "../search-panel/search-panel";
 import PostStatusFilter from "../post-status-filter/post-status-filter";
@@ -13,25 +13,68 @@ const AppBlock = styled.div`
   background-color: #cacac9;
 `
 
-const App = () => {
+export default class App extends Component {
+    constructor (props) {
+        super (props);
+        this.state = {
+            data: [
+                { label: 'Impedit maxime minima nesciunt numquam quos.', important: false, id: 1 },
+                { label: 'Ab accusamus commodi cupiditate.', important: true, id: 2 },
+                { label: 'Lorem ipsum dolor sit amet.', important: false, id: 3 }
+            ]
+        };
+        this.deleteItem = this.deleteItem.bind (this);
+        this.addItem = this.addItem.bind (this);
 
-    const data = [
-        { label: 'Impedit maxime minima nesciunt numquam quos.', important: false, id: '1' },
-        { label: 'Ab accusamus commodi cupiditate.', important: true, id: 'sf' },
-        { label: 'Lorem ipsum dolor sit amet.', important: false, id: 'sdf' }
-    ];
+        this.maxId = 4;
+    }
 
-    return (
-        <AppBlock>
-            <AppHeader/>
-            <div className="search-panel d-flex">
-                <SearchPanel/>
-                <PostStatusFilter/>
-            </div>
-            <PostList posts={data} />
-            <PostAddForm/>
-        </AppBlock>
-    )
+    addItem (body){
+        const newItem = {
+            label: body,
+            important: false,
+            id: this.maxId++
+        }
+        this.setState(({data}) => {
+            const newArr = [ ...data, newItem];
+            return{
+                data: newArr
+            }
+        })
+    }
+
+
+    deleteItem (id) {
+        this.setState (({ data }) => {
+            const index = data.findIndex (elem => elem.id === id)
+
+            const newArr = [...data.slice(0, index), ...data.slice(index + 1)];
+            return {
+                data: newArr
+            }
+        });
+    }
+
+    render () {
+        return (
+            <AppBlock>
+                <AppHeader/>
+                <div className="search-panel d-flex">
+                    <SearchPanel/>
+                    <PostStatusFilter/>
+                </div>
+                <PostList
+                    posts={ this.state.data }
+                    onDelete={ this.deleteItem }
+                />
+                <PostAddForm
+                onAdd={this.addItem}/>
+            </AppBlock>
+        )
+    }
 }
 
-export default App
+
+
+
+

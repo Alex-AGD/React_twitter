@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './post-list-item.css'
 
 
-
 export default class PostListItem extends Component {
     constructor (props) {
         super (props);
@@ -10,8 +9,8 @@ export default class PostListItem extends Component {
             important: false,
             like: false
         };
-        this.onImportant = this.onImportant.bind(this);
-        this.onLike = this.onLike.bind(this);
+        this.onImportant = this.onImportant.bind (this);
+        this.onLike = this.onLike.bind (this);
     }
 
     onImportant () {
@@ -28,7 +27,7 @@ export default class PostListItem extends Component {
 
     render () {
 
-        const { label } = this.props
+        const { label, onDelete } = this.props
         const { important, like } = this.state
         let classNames = 'app-list-item d-flex justify-content-between';
         if (important) {
@@ -50,17 +49,18 @@ export default class PostListItem extends Component {
                                 onClick={ this.onImportant }>
                             <i className='fa fa-star'/>
                         </button>
-                        <button type='button'
-                                className='btn-trash btm-sm'>
-
+                        <button
+                            onClick={onDelete}
+                            type='button'
+                            className='btn-trash btm-sm'>
                             <i className='fa fa-trash-o'/>
                         </button>
 
                         <i className='fa fa-heart'/>
 
+                    </div>
                 </div>
             </div>
-    </div>
-     )
+        )
     }
 }

@@ -33,13 +33,13 @@ const AppHeader = () => {
                 <h1>Alex-AGD</h1>
                 <h2>5 записей, из них понравилось 0</h2>
             </Header>
-            <CloneHeader>
+ {/*           <CloneHeader>
                 <h1>Test</h1>
                 <h1>Test</h1>
                 <h1>Test</h1>
                 <h1>Test</h1>
 
-            </CloneHeader>
+            </CloneHeader>*/}
         </>
     )
 }
