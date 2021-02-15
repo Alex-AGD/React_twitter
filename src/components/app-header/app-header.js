@@ -26,12 +26,12 @@ const CloneHeader = styled (Header)`
     justify-content: center;
 `
 
-const AppHeader = () => {
+const AppHeader = ({allPost,likes}) => {
     return (
         <>
             <Header colored>
                 <h1>Alex-AGD</h1>
-                <h2>5 записей, из них понравилось 0</h2>
+                <h2>{allPost} Записей, из них понравилось {likes}</h2>
             </Header>
  {/*           <CloneHeader>
                 <h1>Test</h1>
